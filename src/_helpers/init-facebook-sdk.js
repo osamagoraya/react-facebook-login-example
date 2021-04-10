@@ -10,7 +10,8 @@ export function initFacebookSdk() {
                 appId: facebookAppId,
                 cookie: true,
                 xfbml: true,
-                version: 'v8.0'
+                version: 'v8.0',
+                scope:'ads_management,ads_read,business_management,public_profile'
             });
 
             // auto authenticate with the api if already logged in with facebook

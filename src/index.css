@@ -16,3 +16,7 @@ a { cursor: pointer }
     text-align: center;
     box-sizing: content-box;
 }
+
+body {
+    background: rgb(219 228 245 / 25%);
+}

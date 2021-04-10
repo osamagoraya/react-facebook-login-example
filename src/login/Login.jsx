@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
-
 import { accountService } from '_services';
+import { Card, CardContent } from '@material-ui/core';
+import CardActions from '@material-ui/core/CardActions';
+import Typography from '@material-ui/core/Typography';
 
 function Login({ history }) {
     useEffect(() => {
@@ -11,16 +13,23 @@ function Login({ history }) {
     }, [history]);
 
     return (
-        <div className="col-md-6 offset-md-3 mt-5 text-center">
-            <div className="card">
-                <h4 className="card-header">React - Facebook Login Example</h4>
-                <div className="card-body">
-                    <button className="btn btn-facebook" onClick={accountService.login}>
+        <div className="col-md-12 mt-5 text-center">
+            <Card style={{ marginTop: "20%"}}>
+                <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                        Algotargat
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        Let check what is your best audience to work with but first - we need to give Algotarget - permission to review your audince.
+                    </Typography>
+                </CardContent>
+                <CardActions>
+                    <button style={{marginLeft: "43%"}} className="btn btn-primary btn-sm" onClick={accountService.login}>
                         <i className="fa fa-facebook mr-1"></i>
-                        Login with Facebook
+                            Login with Facebook
                     </button>
-                </div>
-            </div>
+                </CardActions>
+            </Card>
         </div>
     );
 }

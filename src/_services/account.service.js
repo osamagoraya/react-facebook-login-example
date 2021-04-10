@@ -20,9 +20,14 @@ export const accountService = {
 
 async function login() {
     // login with facebook then authenticate with the API to get a JWT auth token
-    const { authResponse } = await new Promise(window.FB.login);
+    const { authResponse } = await new Promise((resolve,reject)=>{
+        window.FB.login(function(response) {
+            resolve(response)
+          }, {scope: 'ads_management,ads_read,business_management,public_profile',
+          return_scopes: true});
+    });
     if (!authResponse) return;
-
+    console.log("response",authResponse)
     await apiAuthenticate(authResponse.accessToken);
 
     // get return url from location state or default to home page
